@@ -4,9 +4,9 @@ This API allows users to send email.
 
 ## Endpoints
 
-## BaseUrl = ['https://backend-interview-test.vercel.app/api/v1']
+## BaseUrl = ['https://email-app-server.vercel.app/api/v1']
 
-## Documentation = ["https://backend-interview-test.vercel.app/api-docs/"]
+## Documentation = ["https://email-app-server.vercel.app/api-docs/"]
 
 ### Register user
 
