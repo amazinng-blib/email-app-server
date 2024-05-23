@@ -5,11 +5,7 @@ const UserSchema = new mongoose.Schema(
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     email: { type: String, required: true },
-    password: {
-      type: String,
-      required: true,
-      unique: true,
-    },
+    password: { type: String, required: true },
     sent_mails: [
       {
         sender_Id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -43,6 +39,10 @@ const UserSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+// Modify the index on the first_name field to remove uniqueness constraint
+UserSchema.index({ first_name: 1 }, { unique: false });
+UserSchema.index({ last_name: 1 }, { unique: false });
 
 const UserModel = mongoose.model('users', UserSchema);
 module.exports = UserModel;
