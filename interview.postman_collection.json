@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "dd4d1879-9b86-4250-9e9e-aa1d8cc1935b",
+    "name": "interview",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22706570"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"ernest2020@gmail.com\",\r\n    \"firstName\": \"Onyebuchi\",\r\n    \"lastName\": \"Cyprain\",\r\n    \"password\": \"Onye2020#\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://email-app-server.vercel.app/api/v1/register",
+              "protocol": "https",
+              "host": ["email-app-server", "vercel", "app"],
+              "path": ["api", "v1", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"ernest2020@gmail.com\",\r\n    \"password\": \"Onye2020#\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://email-app-server.vercel.app/api/v1/login",
+              "protocol": "https",
+              "host": ["email-app-server", "vercel", "app"],
+              "path": ["api", "v1", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "email",
+      "item": [
+        {
+          "name": "send-mail",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmNTE2NmIwZDZhNTQ4NzBkZjJkMTMiLCJpYXQiOjE3MTY0NzQyMzIsImV4cCI6MTcxOTA2NjIzMn0.g-IWDyat8J1qpNBHjb_kOSkA9vfBsD2JjLvg8-wjCV8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sender_email\":\"onyebuchi2020@gmail.com\",\r\n    \"receiver_email\":\"ernest2020@gmail.com\",\r\n    \"subject\":\"Hello dear\",\r\n    \"content\":\"How far man? how's your day going\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://email-app-server.vercel.app/api/v1/send-mail",
+              "protocol": "https",
+              "host": ["email-app-server", "vercel", "app"],
+              "path": ["api", "v1", "send-mail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "read-mail",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjRmNTE2NmIwZDZhNTQ4NzBkZjJkMTMiLCJpYXQiOjE3MTY0NzQyMzIsImV4cCI6MTcxOTA2NjIzMn0.g-IWDyat8J1qpNBHjb_kOSkA9vfBsD2JjLvg8-wjCV8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"mailId\": \"664f54f9ffd8b8b8bd145e27\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://email-app-server.vercel.app/api/v1/read-mail",
+              "protocol": "https",
+              "host": ["email-app-server", "vercel", "app"],
+              "path": ["api", "v1", "read-mail"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
